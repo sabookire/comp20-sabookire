@@ -1,0 +1,117 @@
+@media only screen 
+and (min-device-width : 1201px) {
+	/* Customer */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	0 0px;
+	}
+}
+
+@media only screen 
+and (min-device-width : 1100px) 
+and (max-device-width : 1200px) {
+	/* Project Leader */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-128 0px; 
+	}
+}
+
+@media only screen 
+and (min-device-width : 1001px) 
+and (max-device-width : 1100px) {
+	/* Analyst */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-256 0px; 
+	}
+}
+
+@media only screen 
+and (min-device-width : 901px) 
+and (max-device-width : 1000px) {
+	/* Programmer */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-384px 0px; 
+	}
+}
+
+@media only screen 
+and (min-device-width : 801px) 
+and (max-device-width : 900px) {
+	/* Business Consultant */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-512 0px; 
+	}
+}
+
+@media only screen
+and (min-device-width : 701px) 
+and (max-device-width : 800px) {
+	.software {
+	/* Project Documented */
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	0 -240px;
+	}
+}
+
+@media only screen
+and (min-device-width : 601px) 
+and (max-device-width : 700px) {
+	/* Operations Installed */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-128 -240px;
+	}
+} 
+
+@media only screen
+and (min-device-width : 501px) 
+and (max-device-width : 600px) {
+	/* Customer Billed */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-256 -240px;
+	}
+} 
+
+@media only screen
+and (min-device-width : 401px) 
+and (max-device-width : 500px) {
+	/* How Supported */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-384 -240px;
+	}
+} 
+
+@media only screen 
+and (max-device-width : 400px) {
+	/* Customer Needed */
+	.software {
+	width:128px; 
+	height:240px; 
+	background:url(software.png) 
+	-512 -240px;
+	}
+} 
