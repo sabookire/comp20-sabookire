@@ -1,41 +1,41 @@
 @media only screen 
-and (min-device-width : 1201px) {
+and (min-width : 1201px) {
 	/* Customer */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	0 0px;
+	0px 0px;
 	}
 }
 
 @media only screen 
-and (min-device-width : 1100px) 
-and (max-device-width : 1200px) {
+and (min-width : 1101px) 
+and (max-width : 1200px) {
 	/* Project Leader */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-128 0px; 
+	-128px 0px; 
 	}
 }
 
-@media only screen 
-and (min-device-width : 1001px) 
-and (max-device-width : 1100px) {
+@media only screen
+and (min-width : 1001px) 
+and (max-width : 1100px) {
 	/* Analyst */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-256 0px; 
+	-256px 0px; 
 	}
 }
 
 @media only screen 
-and (min-device-width : 901px) 
-and (max-device-width : 1000px) {
+and (min-width : 901px) 
+and (max-width : 1000px) {
 	/* Programmer */
 	.software {
 	width:128px; 
@@ -46,72 +46,72 @@ and (max-device-width : 1000px) {
 }
 
 @media only screen 
-and (min-device-width : 801px) 
-and (max-device-width : 900px) {
+and (min-width : 801px) 
+and (max-width : 900px) {
 	/* Business Consultant */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-512 0px; 
+	-512px 0px; 
 	}
 }
 
 @media only screen
-and (min-device-width : 701px) 
-and (max-device-width : 800px) {
+and (min-width : 701px) 
+and (max-width : 800px) {
 	.software {
 	/* Project Documented */
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	0 -240px;
+	0px -240px;
 	}
 }
 
 @media only screen
-and (min-device-width : 601px) 
-and (max-device-width : 700px) {
+and (min-width : 601px) 
+and (max-width : 700px) {
 	/* Operations Installed */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-128 -240px;
+	-128px -240px;
 	}
 } 
 
 @media only screen
-and (min-device-width : 501px) 
-and (max-device-width : 600px) {
+and (min-width : 501px) 
+and (max-width : 600px) {
 	/* Customer Billed */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-256 -240px;
+	-256px -240px;
 	}
 } 
 
 @media only screen
-and (min-device-width : 401px) 
-and (max-device-width : 500px) {
+and (min-width : 401px) 
+and (max-width : 500px) {
 	/* How Supported */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-384 -240px;
+	-384px -240px;
 	}
 } 
 
 @media only screen 
-and (max-device-width : 400px) {
+and (max-width : 400px) {
 	/* Customer Needed */
 	.software {
 	width:128px; 
 	height:240px; 
 	background:url(software.png) 
-	-512 -240px;
+	-512px -240px;
 	}
 } 
