@@ -1,3 +1,9 @@
+<b>diff --git a/messages/lab.js b/messages/lab.js</b>
+<b>index 8bd3ec1..ae28291 100644</b>
+<b>--- a/messages/lab.js</b>
+<b>+++ b/messages/lab.js</b>
+@@ -1 +1,20 @@
+
 function parse() {
 	// Step 1: create instance of object
 	request = new XMLHttpRequest();
