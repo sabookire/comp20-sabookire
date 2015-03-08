@@ -1,1 +1,13 @@
-/* Your style goes here, whatever you like *./
+head {
+	background-color: #CCCCFF;
+	color: #330033;
+	font-family: helvetica;
+	text-align: center;
+}
+
+body {
+	background-color: #CCCCFF;
+	color: #330033;
+	font-family: helvetica;
+	text-align: left;
+}
