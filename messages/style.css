@@ -1,4 +1,4 @@
-title {
+head, title {
 	background-color: #CCCCFF;
 	color: #330033;
 	font-family: helvetica;
@@ -8,6 +8,13 @@ title {
 body {
 	background-color: #CCCCFF;
 	color: #330033;
+	font-family: helvetica;
+	text-align: left;
+}
+
+#messages {
+	background-color: #330033;
+	color: #CC6633;
 	font-family: helvetica;
 	text-align: left;
 }
