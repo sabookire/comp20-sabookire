@@ -1,4 +1,4 @@
-function parse() {
+function.parse() {
 	// Step 1: create instance of object
 	request = new XMLHttpRequest();
 
@@ -12,7 +12,7 @@ function parse() {
 	request.send();
 }
 
-function parseData() {
+function.parseData() {
 	if (request.readyState == 4 && request.status == 200) {
 		messagesDiv = document.getElementById("messages");
 		converted = JSON.parse(request.responseText);
