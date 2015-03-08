@@ -1,20 +1,15 @@
-head, title {
-	background-color: #CCCCFF;
-	color: #330033;
-	font-family: helvetica;
-	text-align: center;
-}
-
 body {
 	background-color: #CCCCFF;
-	color: #330033;
 	font-family: helvetica;
-	text-align: left;
+}
+
+h1 {
+	color: #330033;
+	text-align: center;
 }
 
 #messages {
 	background-color: #330033;
 	color: #CC6633;
-	font-family: helvetica;
 	text-align: left;
 }
