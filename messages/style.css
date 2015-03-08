@@ -1,1 +1,15 @@
-/* Your CSS here... */
+body {
+	background-color: #CCCCFF;
+	font-family: helvetica;
+}
+
+h1 {
+	color: #330033;
+	text-align: center;
+}
+
+#messages {
+	background-color: #330033;
+	color: #CC6633;
+	text-align: left;
+}
