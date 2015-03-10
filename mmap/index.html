@@ -4,7 +4,7 @@
 	<title>Geolocation Map Example</title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<script type="text/javascript" 
-	src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+	src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places"></script>
 	<link rel="stylesheet" href="style.css" />
 	
 	<script>
@@ -59,12 +59,21 @@
 		title: "Here I Am!"
 		});
 		marker.setMap(map);
-
+					
+		// Open info window on click of marker
+		google.maps.event.addListener(marker, 'click', function() {
+			infowindow.setContent(marker.title);
+			infowindow.open(map, marker);
+		});
+				
 	}
 
+	//function parse() {
+	//	request.open("GET", "data.json", true);
+	//	request.
+	//}
 </script>
 </head>
-
 <body onload = "init()">
 	<h1>The Real Marauder's Map</h1>
 	<div id="map_canvas"></div>
