@@ -91,7 +91,7 @@
 		if (request.readyState == 4 && request.status == 200) {
 			usersArr = JSON.parse(request.responseText);
 			for (i = 0; i < usersArr.length; i++) {
-				//stuff
+				createMarkerWithIW(usersArr[i]['lat']+usersArr[i]['lng'], usersArr[i]['login']);
 			}
 		}
 		else if (request.readyState == 4 && request.status != 200) {
