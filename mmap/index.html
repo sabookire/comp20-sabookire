@@ -75,7 +75,7 @@
 	function sendMyLocation() {
 		console.log("In sendMyLocation")
 		myloc = new XMLHttpRequest();
-		params = "login=CindyLytle&lat="+myLat+"lng="+myLng;
+		params = "login=CindyLytle&lat="+myLat+"&lng="+myLng;
 		myloc.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
 		myloc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		myloc.onreadystatechange = parseData;
