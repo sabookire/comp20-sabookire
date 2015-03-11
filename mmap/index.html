@@ -58,11 +58,11 @@
 		sendMyLocation();
 	}
 
-	function createMarkerWithIW (position, title, icon) {
+	function createMarkerWithIW (position, title, image) {
 		marker = new google.maps.Marker({
 			position: position,
 			title: title
-			icon: icon
+			icon: image
 			});
 		marker.setMap(map);
 	
