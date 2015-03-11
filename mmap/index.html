@@ -73,7 +73,7 @@
 		});
 }
 	//got location, send it to datastore
-	function sendMyLocation () {
+	function sendMyLocation() {
 		myloc = new XMLHttpRequest();
 		params = "login=CindyLytle&lat="+myLat+"lng="+myLng;
 		myloc.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
@@ -113,7 +113,8 @@
 		console.log(dist);
 	}
 </script>
-head>
+
+</head>
 <body onload = "init()">
 	<h1>The Real Marauder's Map</h1>
 	<div id="map_canvas"></div>
