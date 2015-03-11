@@ -83,9 +83,9 @@
 	}
 
 	function parseData() {
-		if (request.readyState == 4 && request.status == 200) {
-			usersArr = JSON.parse(request.responseText);
-			console.log(request.responseText);
+		if (myloc.readyState == 4 && myloc.status == 200) {
+			usersArr = JSON.parse(myloc.responseText);
+			console.log(myloc.responseText);
 			for (i = 0; i < usersArr.length; i++) {
 				var pos = new google.maps.LatLng(usersArr[i]['lat'], usersArr[i]['lng']);
 				var dist = calculateDistance(usersArr[i]['lat'], 
@@ -93,7 +93,7 @@
 				createMarkerWithIW(pos, usersArr[i]['login'] + dist + "miles away from me");
 			}
 		}
-		else if (request.readyState == 4 && request.status != 200) {
+		else if (myloc.readyState == 4 && myloc.status != 200) {
 			alert("Page couldn't load");
 		}
 	}
