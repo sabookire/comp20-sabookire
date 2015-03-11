@@ -88,8 +88,8 @@
 			console.log(myloc.responseText);
 			for (i = 0; i < usersArr.length; i++) {
 				var pos = new google.maps.LatLng(usersArr[i]['lat'], usersArr[i]['lng']);
-				/*var dist = calculateDistance(usersArr[i]['lat'], 
-					usersArr[i]['lng']);*/
+				var dist = calculateDistance(usersArr[i]['lat'], 
+					usersArr[i]['lng']);
 				createMarkerWithIW(pos, "usersArr[i]['login'] + dist");
 			}
 		}
@@ -98,7 +98,7 @@
 		}
 	}
 
-	/*function calculateDistance(lat, lng) {
+	function calculateDistance(lat, lng) {
 		var R = 3959; //radius of Earth in miles
 		var x = lat - myLat;
 		var y = lng - myLng;
@@ -111,7 +111,7 @@
 		var dist = R * c;
 		return dist;
 		console.log(dist);
-	}*/
+	}
 
 	function toRad(deg) {
 	rad = (Math.PI/180) * deg;
