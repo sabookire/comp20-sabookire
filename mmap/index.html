@@ -95,7 +95,7 @@
 				var pos = new google.maps.LatLng(usersArr[i]['lat'], usersArr[i]['lng']);
 				var dist = calculateDistance(usersArr[i]['lat'], 
 					usersArr[i]['lng']);
-				createMarkerWithIW(pos, usersArr[i]['login'] + dist "miles away from me");
+				createMarkerWithIW(pos, usersArr[i]['login'] + dist + "miles away from me");
 			}
 		}
 		else if (request.readyState == 4 && request.status != 200) {
