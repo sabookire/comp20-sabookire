@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Geolocation Map Example</title>
+	<title>The Real Marauder's Map</title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<script type="text/javascript" 
 	src="http://maps.googleapis.com/maps/api/js?sensor=true&amp;libraries=places"></script>
@@ -45,7 +45,7 @@
 			else {
 				alert("Sorry! Geolocation is not supported by your web browser");
 				}
-				console.log("Leaving getMyLocation()");
+		console.log("Leaving getMyLocation()");
 	}
 
 	function loadMap() {
@@ -90,8 +90,9 @@
 	function parseData() {
 		if (request.readyState == 4 && request.status == 200) {
 			usersArr = JSON.parse(request.responseText);
+			console.log(request.responseText);
 			for (i = 0; i < usersArr.length; i++) {
-				createMarkerWithIW(usersArr[i]['lat']+usersArr[i]['lng'], usersArr[i]['login']);
+				//createMarkerWithIW(usersArr[i]['lat']+usersArr[i]['lng'], usersArr[i]['login']);
 			}
 		}
 		else if (request.readyState == 4 && request.status != 200) {
