@@ -92,12 +92,30 @@
 			usersArr = JSON.parse(request.responseText);
 			console.log(request.responseText);
 			for (i = 0; i < usersArr.length; i++) {
-				//createMarkerWithIW(usersArr[i]['lat']+usersArr[i]['lng'], usersArr[i]['login']);
+				var pos = new google.maps.LatLng(usersArr[i]['lat'], usersArr[i]['lng']);
+				var dist = calculateDistance(usersArr[i]['lat'], 
+					usersArr[i]['lng']);
+				createMarkerWithIW(pos, usersArr[i]['login'] + dist "miles away from me");
 			}
 		}
 		else if (request.readyState == 4 && request.status != 200) {
 			alert("Page couldn't load");
 		}
+	}
+
+	function calculateDistance(lat, lng) {
+		var R = 3959; //radius of Earth in miles
+		var x = lat - myLat;
+		var y = lng - myLng;
+		var dLat = x.toRad();
+		var dLng = y.toRad();
+		var a = Math.sin(dLat/2) * Math.sin(dLat/2) + 
+                Math.cos(lat.toRad()) * Math.cos(myLat.toRad()) * 
+                Math.sin(dLng/2) * Math.sin(dLng/2);  
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		var dist = R * c;
+		return dist;
+		console.log(dist);
 	}
 </script>
 </head>
