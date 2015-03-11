@@ -54,17 +54,26 @@
 		map.panTo(me);
 	
 		// Create a marker and open infowindow on click of said marker
-		createMarkerWithIW(me, "Here I am!", 'sylvie-icon.jpg');
+		createMarkerWithIW(me, "Here I am!");
 		sendMyLocation();
 	}
 
-	function createMarkerWithIW (position, title, image) {
-		marker = new google.maps.Marker({
+	function createMarkerWithIW (position, title) {
+		if (position == me) {
+			var image = 'sylvie-icon.jpg';
+			marker = new google.maps.Marker({
 			position: position,
 			title: title
 			icon: image
 			});
-		marker.setMap(map);
+		}
+		else if (position != me) {
+			marker = new google.maps.Marker({
+			position: position,
+			title: title
+			});
+			marker.setMap(map);	
+		}
 	
 		// Open info window on click of marker
 		google.maps.event.addListener(marker, 'click', function() {
