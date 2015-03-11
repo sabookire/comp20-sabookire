@@ -54,14 +54,15 @@
 		map.panTo(me);
 	
 		// Create a marker and open infowindow on click of said marker
-		createMarkerWithIW(me, "Here I am!");
+		createMarkerWithIW(me, "Here I am!", 'sylvie-icon.jpg');
 		sendMyLocation();
 	}
 
-	function createMarkerWithIW (position, title) {
+	function createMarkerWithIW (position, title, icon) {
 		marker = new google.maps.Marker({
 			position: position,
 			title: title
+			icon: icon;
 			});
 		marker.setMap(map);
 	
