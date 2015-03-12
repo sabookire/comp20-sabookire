@@ -26,14 +26,11 @@
 	//initialize map
 	function init () {
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		console.log("Call before getMyLocation()");
 		getMyLocation();
-		console.log("Call after getMyLocation()");
 	}
 
 	// get my location
 	function getMyLocation () {
-		console.log("In getMyLocation()");
 			if (navigator.geolocation) { // if the navigator.geolocation object is supported on your browser
 				navigator.geolocation.getCurrentPosition(function(position) {
 					myLat = position.coords.latitude;
@@ -44,7 +41,6 @@
 			else {
 				alert("Sorry! Geolocation is not supported by your web browser");
 				}
-		console.log("Leaving getMyLocation()");
 	}
 
 	function loadMap() {
@@ -83,7 +79,6 @@
 }
 	//got location, send it to datastore
 	function sendMyLocation() {
-		console.log("In sendMyLocation")
 		myloc = new XMLHttpRequest();
 		params = "login=CindyLytle&lat="+myLat+"&lng="+myLng;
 		myloc.open("POST", "https://secret-about-box.herokuapp.com/sendLocation", true);
@@ -95,7 +90,6 @@
 	function parseData() {
 		if (myloc.readyState == 4 && myloc.status == 200) {
 			usersArr = JSON.parse(myloc.responseText);
-			console.log(myloc.responseText);
 			for (i = 0; i < usersArr.length; i++) {
 				var pos = new google.maps.LatLng(usersArr[i]['lat'], usersArr[i]['lng']);
 				var dist = calculateDistance(usersArr[i]['lat'], 
@@ -120,7 +114,6 @@
 		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 		var dist = R * c;
 		return dist;
-		console.log(dist);
 	}
 
 	function toRad(deg) {
