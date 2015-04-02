@@ -23,11 +23,9 @@
 	 		//$("#log").html(localStorage["messages"]);
 	 		list = "";
 	 		for (i = 0; i < localStorage.length; i++) {
-	 			if (localStorage.key(i) == date){
-	 				list+= "<p>" + localStorage.key(i) + " - " + 
-	 				localStorage[localStorage.key(i)] + "</p>";
-	 				}
-				}
+	 			list+= "<p>" + localStorage.key(i) + " - " + 
+	 			localStorage[localStorage.key(i)] + "</p>";
+	 			}		
 	 		 $("#log").html(list);
 		}
 
