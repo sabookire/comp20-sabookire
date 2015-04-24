@@ -14,10 +14,24 @@
 	<h3> 1. Cross-Site Scripting </h3>
 	<ul> 
 		<li> Location: POST API  (index.js) </li>
-		<li> Severity: High. Check-In Locations trusts users to input the correct types of data. If, for example, a user inputs something other than a string in the 'login' field, such as JavaScript as in <a href = "curldata.html">this</a> example, the website could be seriously manipulated. </li>
+		<li> Severity: High. Check-In Locations trusts users to input the correct types of data. If, for example, a user inputs something other than a string in the 'login' field, such as JavaScript as in <a href = "curldata.html">this</a> example, the website could be seriously manipulated. It is susceptible to stolen cookie information, malicious code injection, annoying messages. If attacked, all users would be presented with fraudulent web content.</li>
 		<li> Description: Data inputted into the POST API is not escaped. This means that a user could input JavaScript or HTML, and the application would execute the script. </li>
 		<IMG class = "displayed" src = "alert.png" alt = "alert message"/>
-		<li> Resolution: To resolve this issue, </li>
+		<li> Resolution: To prevent data from being read as code: Change <code>&lt;</code> to <code>&amp;lt;</code> and <code>&gt;</code> to <code> &amp;gt;</code></li>
+	</ul>
+	<h3>2. When database is empty, server crashes</h3>
+	<ul>
+		<li> Location: POST API (index.js) </li>
+		<li>Severity: High. If the database is empty, the server crashes. It is not unlikely that the database will be empty at some points for this product, and crashing the server when this happens is very detrimental to the product. </li>
+		<li>Description: The following code has a bug that leads to the server crashing when the page is loaded and the database is empty:</li>
+		<IMG class = "displayed" src = "POST_code.png" alt = "POST code"/>
+		<p>If the array length is 0, the program executes <code>response.send([])</code>. However, the program does not return after this statement. It therefore enters the following for loop, after which it executes <code>index += "</body></html>";</code> and <code>response.send(index);</code>, which first results in the [] response, but after the page is refreshed, the server crashes.</p>
+		<div class = "centered"> Before refresh: </div>
+		<IMG class = "displayed" src = "empty_array.png" alt = "Empty array"/>
+		<div class = "centered"> After refresh: </div>
+		<IMG class = "displayed" src = "connection_refused.png" alt = "Server crashes"/>
+	<li>Resolution: Return after <code>response.send([])</code> so that the following code is not executed.</li>
+	</ul>
 </body>
 </html>
 
