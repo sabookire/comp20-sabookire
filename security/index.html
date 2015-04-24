@@ -11,17 +11,19 @@
 	<p>My first means of testing were done through "black-box" testing. After that, I carefully examined the source code to find remaining security problems. Then, I documented all concerns below, with suggested resolutions. <p>
 	<h2>Abstract of Findings</h2>
 	<h2>Issues Found</h2>
-	<h3> 1. Cross-Site Scripting </h3>
+	<h3> 1. Cross-Site Scripting: </h3>
 	<ul> 
-		<li> Location: POST API  (index.js) </li>
-		<li> Severity: High. Check-In Locations trusts users to input the correct types of data. If, for example, a user inputs something other than a string in the 'login' field, such as JavaScript as in <a href = "curldata.html">this</a> example, the website could be seriously manipulated. It is susceptible to stolen cookie information, malicious code injection, annoying messages. If attacked, all users would be presented with fraudulent web content.</li>
+		<li> Location: POST API (index.js) </li>
+		<li> Severity: High. Check-In Locations trusts users to input the correct types of data. If, for example, a user inputs something other than a string in the 'login' field, such as <a href = "curldata.html">this</a> JavaScript, the website could be seriously manipulated. It is susceptible to stolen cookie information, malicious code injection, and/or annoying messages. If attacked, all users would be presented with fraudulent web content.</li>
 		<li> Description: Data inputted into the POST API is not escaped. This means that a user could input JavaScript or HTML, and the application would execute the script. </li>
 		<IMG class = "displayed" src = "alert.png" alt = "alert message"/>
-		<li> Resolution: To prevent data from being read as code: Change <code>&lt;</code> to <code>&amp;lt;</code> and <code>&gt;</code> to <code> &amp;gt;</code></li>
+		<li> Resolution: My client is already using the <a href = "https://www.npmjs.com/package/validator">npm validator package</a> to ensure <code>lat</code> and <code>lng</code> are variable type float. My suggestion to prevent cross-site scripting through the login parameter is to check that <code>validator.isAlphanumeric()</code> to check if <code>login</code> data contains only alpha or numeric characters. If other characters, such as the malicious <code>&lt;</code> or <code>&gt;</code> are inputted through login, the program will not run.</li>
+		<IMG class = "displayed" src = "isAlphanumeric.png" alt = "alpha numeric login"/>
+		<p>Of course, this solution limits my client's user logins to alpha and numeric characters. If my client wishes to have user logins with other characters, I recommend parsing the data and replacing malicious characters with their HTML counter parts (e.g. replace <code>&lt;</code> with <code>&amplt;</code>) using the <code>validator.escape()</code> method.
 	</ul>
-	<h3>2. When database is empty, server crashes</h3>
+	<h3>2. When database is empty, server crashes: </h3>
 	<ul>
-		<li> Location: POST API (index.js) </li>
+		<li> Location: GET API (index.js) </li>
 		<li>Severity: High. If the database is empty, the server crashes. It is not unlikely that the database will be empty at some points for this product, and crashing the server when this happens is very detrimental to the product. </li>
 		<li>Description: The following code has a bug that leads to the server crashing when the page is loaded and the database is empty:</li>
 		<IMG class = "displayed" src = "POST_code.png" alt = "POST code"/>
@@ -30,7 +32,15 @@
 		<IMG class = "displayed" src = "empty_array.png" alt = "Empty array"/>
 		<div class = "centered"> After refresh: </div>
 		<IMG class = "displayed" src = "connection_refused.png" alt = "Server crashes"/>
-	<li>Resolution: Return after <code>response.send([])</code> so that the following code is not executed.</li>
+	<li>Resolution: Add a <code>return;</code> statement after <code>response.send([]);</code> to prevent the proceeding code from beng executed.</li>
+	<IMG class = "displayed" src = "fixed-emptyarray-crash.png" alt = "Resolution"/>
+	</ul>
+	<h3> 3. Something </h3>
+	<ul>
+		<li> Location: </li>
+		<li> Severity: </li>
+		<li> Description: </li>
+		<li> Resolution: </li>
 	</ul>
 </body>
 </html>
