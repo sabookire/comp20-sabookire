@@ -1,0 +1,22 @@
+body {
+	font-family: verdana;
+}
+
+h1, h2 {
+	text-align: center;
+}
+h2 {
+	font-style: italic;
+}
+IMG.displayed{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.textarea {
+    background-color: #000;
+    border: 1px solid #000;
+    color: #00ff00;
+    padding: 8px;
+    font-family: monospace;
+}
